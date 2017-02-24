@@ -2,7 +2,7 @@ class SortAlgorithms{
 
   public static void main(String[] args) {
     int array[]={1,8,4,1,2,3,5,7,5,9,5,3,1};
-    bubbleSort(array);
+    insertionSort(array);
 
   }
 
@@ -64,6 +64,29 @@ class SortAlgorithms{
 
     }
 
+
+    /*
+    *Insertion Sort
+    *Dec:works like the way we sort cards
+    *timeComplexity:O(n2)
+    *arr[]:array to be sorted
+    */
+      public static void insertionSort(int arr[])
+      {
+        int lengthOfArray = arr.length;
+        printArray(arr);
+        for (int i=1;i<lengthOfArray;i++) {
+          int key=arr[i];
+          int j=i-1;
+          while (j>=0 && arr[j] > key)
+             {
+                 arr[j+1] = arr[j];
+                 j = j-1;
+             }
+             arr[j+1] = key;
+          printArray(arr);
+      }
+      }
 
   static void print(String toBePrinted)
   {
